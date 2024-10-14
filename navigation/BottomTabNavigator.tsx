@@ -6,14 +6,12 @@ import SettingsScreen from "../screens/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+export default function BottomTabNavigator() {
     return (
-            <Tab.Navigator>
-                <Tab.Screen name="Home" component={HomeScreen} />
-                <Tab.Screen name="Profile" component={ProfileScreen} />
-                <Tab.Screen name="Settings" component={SettingsScreen} />
-            </Tab.Navigator>
+        <Tab.Navigator>
+            <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
+        </Tab.Navigator>
     );
 };
-
-export default BottomTabNavigator;
