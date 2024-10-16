@@ -15,39 +15,40 @@ const LoginScreen: React.FC = () => {
 
             <TextInput
                 style={styles.input}
-                placeholder='Email'
+                placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
-                keyboardType='email-address'
-                autoCapitalize='none'
+                keyboardType="email-address"
+                autoCapitalize="none"
             />
 
             <TextInput
                 style={styles.input}
-                placeholder='Password'
+                placeholder="Password"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
             />
 
-            <Button title='Login' onPress={handleLogin} />
+            <Button title="Login" onPress={handleLogin} />
 
             <Text style={styles.footerText}>Don't have an account? Register</Text>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         fontWeight: 'bold',
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        paddingTop: 10,
     },
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         marginBottom: 20,
-        textAlign: 'center'
+        textAlign: 'center',
     },
     input: {
         height: 50,
@@ -55,13 +56,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 8,
         marginBottom: 20,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
     },
     footerText: {
         marginTop: 20,
         textAlign: 'center',
-        color: 'blue'
-    }
-})
+        color: 'blue',
+    },
+});
 
 export default LoginScreen;

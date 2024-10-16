@@ -1,24 +1,24 @@
-import { useNavigation } from "@react-navigation/native";
-import React from "react";
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface ChatRoom {
-    id: string;
+    id: number;
     name: string;
     lastMessage: string;
 }
 
 const chatRooms: ChatRoom[] = [
-    { id: '1', name: 'General', lastMessage: 'Hello there!' },
-    { id: '2', name: 'Friends', lastMessage: 'Catch you later!' },
-    { id: '3', name: 'Work', lastMessage: 'Deadline tomorrow' },
+    { id: 1, name: 'General', lastMessage: 'Hello there!' },
+    { id: 2, name: 'Friends', lastMessage: 'Catch you later!' },
+    { id: 3, name: 'Work', lastMessage: 'Deadline tomorrow' },
 ];
 
 const HomeScreen: React.FC = () => {
     const navigation = useNavigation();
 
-    const handleChatRoomPress = (roomId: string) => {
-        navigation.navigate('ChatScreen', { roomId });
+    const handleChatRoomPress = (roomId: number) => {
+        navigation.navigate('Chat', { roomId });
     };
 
     return (
