@@ -2,6 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useTheme } from '../context/ThemeContext';
+import { darkTheme, lightTheme } from '../assets/colors/theme';
 
 interface ChatRoom {
     id: number;
@@ -17,30 +19,33 @@ const chatRooms: ChatRoom[] = [
 
 const HomeScreen: React.FC = () => {
     const navigation = useNavigation();
+    const { isDark } = useTheme();
+
+    const themeStyles = isDark ? darkTheme : lightTheme;
 
     const handleChatRoomPress = (roomId: number) => {
         navigation.navigate('Chat', { roomId: item.id });
     };
 
     const renderChatItem = ({ item }) => (
-        <TouchableOpacity style={styles.chatItem} onPress={handleChatRoomPress}>
+        <TouchableOpacity style={[styles.chatItem, themeStyles.card]} onPress={handleChatRoomPress}>
             <View style={styles.chatDetails}>
-                <Text style={styles.chatName}>{item.name}</Text>
-                <Text style={styles.chatLastMessage}>{item.lastMessage}</Text>
+                <Text style={[styles.chatName, themeStyles.text]}>{item.name}</Text>
+                <Text style={[styles.chatLastMessage, themeStyles.text]}>{item.lastMessage}</Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color="gray" />
         </TouchableOpacity>
     );
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, themeStyles.container]}>
             <View style={styles.welcomeSection}>
-                <Text style={styles.welcomeText}>Welcome, User!</Text>
+                <Text style={[styles.welcomeText, themeStyles.text]}>Welcome, User!</Text>
                 <Image source={{ uri: 'https://images.unsplash.com/photo-1726853546098-380e29da9e31' }} style={styles.profileImage} />
             </View>
 
             <View style={styles.recentChatsHeader}>
-                <Text style={styles.sectionTitle}>
+                <Text style={[styles.sectionTitle, themeStyles.text]}>
                     Recent Chats
                 </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('ChatListScreen')}>
