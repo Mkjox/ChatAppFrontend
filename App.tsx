@@ -12,6 +12,6 @@ function App(): React.JSX.Element {
       </SafeAreaProvider>
     </Provider>
   );
-};
+}
 
 export default App;

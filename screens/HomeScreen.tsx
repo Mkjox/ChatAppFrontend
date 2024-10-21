@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface ChatRoom {
     id: number;
@@ -18,23 +19,40 @@ const HomeScreen: React.FC = () => {
     const navigation = useNavigation();
 
     const handleChatRoomPress = (roomId: number) => {
-        navigation.navigate('Chat', { roomId });
+        navigation.navigate('Chat', { roomId: item.id });
     };
+
+    const renderChatItem = ({ item }) => (
+        <TouchableOpacity style={styles.chatItem} onPress={handleChatRoomPress}>
+            <View style={styles.chatDetails}>
+                <Text style={styles.chatName}>{item.name}</Text>
+                <Text style={styles.chatLastMessage}>{item.lastMessage}</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color="gray" />
+        </TouchableOpacity>
+    );
 
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}>Welcome to ChatApp</Text>
+            <View style={styles.welcomeSection}>
+                <Text style={styles.welcomeText}>Welcome, User!</Text>
+                <Image source={{ uri: 'https://images.unsplash.com/photo-1726853546098-380e29da9e31' }} style={styles.profileImage} />
+            </View>
+
+            <View style={styles.recentChatsHeader}>
+                <Text style={styles.sectionTitle}>
+                    Recent Chats
+                </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('ChatListScreen')}>
+                    <Text>See All</Text>
+                </TouchableOpacity>
+            </View>
+
             <FlatList
                 data={chatRooms}
                 keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <TouchableOpacity
-                        style={styles.chatRoomContainer}
-                        onPress={() => handleChatRoomPress(item.id)}>
-                        <Text style={styles.chatRoomName}>{item.name}</Text>
-                        <Text style={styles.chatRoomMessage}>{item.lastMessage}</Text>
-                    </TouchableOpacity>
-                )}
+                renderItem={renderChatItem}
+                style={styles.chatList}
             />
         </View>
     );
@@ -43,31 +61,75 @@ const HomeScreen: React.FC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#f9f9f9',
+        paddingHorizontal: 20,
     },
-    headerText: {
-        fontSize: 24,
+    welcomeSection: {
+        alignItems: 'center',
+        marginVertical: 20,
+    },
+    welcomeText: {
+        fontSize: 28,
         fontWeight: 'bold',
-        marginBottom: 20,
         color: '#333',
     },
-    chatRoomContainer: {
-        padding: 15,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ddd',
-        backgroundColor: '#f9f9f9',
+    profileImage: {
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+        marginTop: 10,
+    },
+    recentChatsHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginBottom: 10,
-        borderRadius: 10
     },
-    chatRoomName: {
+    sectionTitle: {
         fontSize: 18,
-        fontWeight: '600',
-        color: '#000',
+        fontWeight: 'bold',
+        color: '#333',
     },
-    chatRoomMessage: {
+    seeAllText: {
+        color: '#007BFF',
+    },
+    chatList: {
+        marginBottom: 20,
+    },
+    chatItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 15,
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        marginVertical: 5,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+        elevation: 2,
+    },
+    chatImage: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        marginRight: 15,
+    },
+    chatDetails: {
+        flex: 1,
+    },
+    chatName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    chatLastMessage: {
         fontSize: 14,
-        color: '#666',
+        color: '#999',
+        marginTop: 3,
     },
 });
 
