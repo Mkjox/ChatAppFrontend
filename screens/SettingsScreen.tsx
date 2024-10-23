@@ -30,7 +30,7 @@ const SettingsScreen = () => {
                 <View style={styles.profileInfo}>
                     <Text style={[styles.username, themeStyles.text]}>John Doe</Text>
                     <Text style={[styles.email, themeStyles.text]}>john.doe@example.com</Text>
-                    <TouchableOpacity style={styles.editProfileButton}>
+                    <TouchableOpacity style={[styles.editProfileButton, themeStyles.button]}>
                         <Text style={styles.editProfileText}>Edit Profile</Text>
                     </TouchableOpacity>
                 </View>
@@ -69,7 +69,7 @@ const SettingsScreen = () => {
             </View>
 
             {/* Logout */}
-            <TouchableOpacity style={styles.logoutButton}>
+            <TouchableOpacity style={[styles.logoutButton, themeStyles.button]}>
                 <Text style={styles.logoutText}>Log Out</Text>
             </TouchableOpacity>
         </ScrollView>
@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
         color: '#888',
     },
     editProfileButton: {
-        backgroundColor: '#5E60CE',
         paddingVertical: 5,
         paddingHorizontal: 15,
         borderRadius: 10,
@@ -158,7 +157,6 @@ const styles = StyleSheet.create({
     },
     logoutButton: {
         marginTop: 40,
-        backgroundColor: '#5E60CE',
         paddingVertical: 15,
         marginHorizontal: 20,
         borderRadius: 12,

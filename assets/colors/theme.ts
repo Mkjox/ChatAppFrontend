@@ -15,7 +15,10 @@ export const lightTheme = StyleSheet.create({
         color: '#333',
     },
     button: {
-        backgroundColor: '#5E60CE',
+        backgroundColor: '#6200EE',
+    },
+    primaryColor: {
+        color: '#6200EE',
     },
     switchTrack: {
         false: '#767577',
@@ -42,7 +45,10 @@ export const darkTheme = StyleSheet.create({
         color: '#fff',
     },
     button: {
-        backgroundColor: 'BB86FC',
+        backgroundColor: '#BB86FC',
+    },
+    primaryColor: {
+        color: '#BB86FC',
     },
     switchTrack: {
         false: '#767577',

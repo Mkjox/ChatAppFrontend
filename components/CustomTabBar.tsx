@@ -71,7 +71,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
                             position: 'absolute',
                             padding: 10,
                             backgroundColor:
-                                isFocused ? '#5E60CE' : 'transparent',
+                                isFocused ? `${themeStyles.primaryColor.color}` : 'transparent',
                             borderRadius: 20,
                             width: 90,
                             flexDirection: 'row',

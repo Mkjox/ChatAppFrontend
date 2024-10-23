@@ -25,24 +25,24 @@ const ProfileScreen = () => {
 
             <View style={[styles.statsContainer, themeStyles.card]}>
                 <View style={[styles.statBox]}>
-                    <Text style={styles.statNumber}>25</Text>
+                    <Text style={[styles.statNumber, themeStyles.primaryColor]}>25</Text>
                     <Text style={[styles.statLabel, themeStyles.text]}>Posts</Text>
                 </View>
                 <View style={styles.statBox}>
-                    <Text style={styles.statNumber}>1.2k</Text>
+                    <Text style={[styles.statNumber, themeStyles.primaryColor]}>1.2k</Text>
                     <Text style={[styles.statLabel, themeStyles.text]}>Followers</Text>
                 </View>
                 <View style={styles.statBox}>
-                    <Text style={styles.statNumber}>350</Text>
+                    <Text style={[styles.statNumber, themeStyles.primaryColor]}>350</Text>
                     <Text style={[styles.statLabel, themeStyles.text]}>Following</Text>
                 </View>
             </View>
 
             <View style={styles.actionButtons}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={[styles.buttonText, themeStyles.button]}>Follow</Text>
+                <TouchableOpacity style={[styles.button, themeStyles.button]}>
+                    <Text style={styles.buttonText}>Follow</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={[styles.button, themeStyles.button]}>
                     <Text style={styles.buttonText}>Message</Text>
                 </TouchableOpacity>
             </View>
@@ -58,15 +58,15 @@ const ProfileScreen = () => {
             <View style={[styles.contactSection, themeStyles.card]}>
                 <Text style={[styles.sectionTitle, themeStyles.text]}>Contact Info</Text>
                 <View style={styles.infoContainer}>
-                    <Ionicons name="mail-outline" size={20} color="#5E60CE" />
+                    <Ionicons name="mail-outline" size={20} color={themeStyles.primaryColor.color} />
                     <Text style={[styles.infoText, themeStyles.text]}>john.doe@example.com</Text>
                 </View>
                 <View style={styles.infoContainer}>
-                    <Ionicons name="call-outline" size={20} color="#5E60CE" />
+                    <Ionicons name="call-outline" size={20} color={themeStyles.primaryColor.color} />
                     <Text style={[styles.infoText, themeStyles.text]}>+1 234 567 890</Text>
                 </View>
                 <View style={styles.infoContainer}>
-                    <Ionicons name="location-outline" size={20} color="#5E60CE" />
+                    <Ionicons name="location-outline" size={20} color={themeStyles.primaryColor.color} />
                     <Text style={[styles.infoText, themeStyles.text]}>Los Angeles, CA</Text>
                 </View>
             </View>

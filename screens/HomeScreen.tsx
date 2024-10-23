@@ -49,7 +49,7 @@ const HomeScreen: React.FC = () => {
                     Recent Chats
                 </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('ChatListScreen')}>
-                    <Text>See All</Text>
+                    <Text style={themeStyles.text}>See All</Text>
                 </TouchableOpacity>
             </View>
 
