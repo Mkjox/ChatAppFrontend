@@ -1,79 +1,59 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Chat App
 
-# Getting Started
+## Overview
+Chat App is a React Native application that allows users to communicate in real-time through messages. The app provides a user-friendly interface and supports various features to enhance the chatting experience. **Please note that this project is still in progress and does not utilize any paid services such as Firebase.**
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
+- **Real-time Messaging:** Send and receive messages instantly.
+- **User Authentication:** Secure login and registration for users.
+- **Group Chats:** Create and manage group conversations.
+- **Media Sharing:** Share images, videos, and other files.
+- **Push Notifications:** Stay updated with real-time alerts for new messages.
 
-## Step 1: Start the Metro Server
+## Technologies Used
+- **React Native:** A framework for building native apps using React.
+- **Redux:** State management library to manage application state.
+- **React Navigation:** For seamless navigation between screens.
+- **ESLint & Prettier:** For maintaining code quality and consistency.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Installation
+To get started with the Chat App, follow these steps:
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Mkjox/ChatAppFrontend.git
+   cd chat-app
+   ```
 
-```bash
-# using npm
-npm start
+2. **Install dependencies:**
+   You can use either npm or yarn:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# OR using Yarn
-yarn start
-```
+3. **Run the app:**
+   Use the following command to start the app:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-## Step 2: Start your Application
+## Usage
+Once the app is running, you can:
+- Sign up or log in to your account.
+- Start chatting with your friends or create group chats.
+- Share media and receive notifications for new messages.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Contributing
+I welcome contributions! If you want to contribute to the Chat App, please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your forked repository.
+5. Create a pull request detailing your changes.
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
